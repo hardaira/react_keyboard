@@ -1,21 +1,22 @@
-
 import React from 'react';
 
 type State = {
   pressedKey: string;
-}
-type Props = {}
+};
+type Props = {};
 export class NewElement extends React.Component<Props, State> {
   state: State = {
-  pressedKey: 'Nothing was pressed yet',
-  }
+    pressedKey: 'Nothing was pressed yet',
+  };
+
   handleKeyPress = (e: KeyboardEvent) => {
     this.setState({ pressedKey: `Last pressed key is ${e.key}` });
   };
 
-   componentDidMount() {
+  componentDidMount() {
     document.addEventListener('keyup', this.handleKeyPress);
   }
+
   componentWillUnmount() {
     document.removeEventListener('keyup', this.handleKeyPress);
   }
@@ -24,10 +25,9 @@ export class NewElement extends React.Component<Props, State> {
     const { pressedKey } = this.state;
 
     return (
-    <div className="App">
-      <p className="App__message"> {pressedKey} </p>
-    </div>
+      <div className="App">
+        <p className="App__message"> [{pressedKey}] </p>
+      </div>
     );
   }
 }
-
