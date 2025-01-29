@@ -26,7 +26,7 @@ export class NewElement extends React.Component<Props, State> {
 
     return (
       <div className="App">
-        <p className="App__message"> {pressedKey} </p>
+        <p className="App__message">{pressedKey}</p>
       </div>
     );
   }
