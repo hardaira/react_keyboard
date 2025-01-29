@@ -10,7 +10,7 @@ export class NewElement extends React.Component<Props, State> {
   };
 
   handleKeyPress = (e: KeyboardEvent) => {
-    this.setState({ pressedKey: `Last pressed key is [${e.key}]` });
+    this.setState({ pressedKey: `The last pressed key is [${e.key}]` });
   };
 
   componentDidMount() {
